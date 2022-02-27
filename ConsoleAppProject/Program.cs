@@ -21,13 +21,16 @@ namespace ConsoleAppProject
 
             Console.WriteLine();
             Console.WriteLine(" =================================================");
-            Console.WriteLine("    BNU CO453 Applications Programming 2021-2022! ");
-            Console.WriteLine("        by Derek                                  ");
+            Console.WriteLine("    BNU CO453 Applications Programming 2022       ");
+            Console.WriteLine("        by Arbaaz Patwari                         ");
             Console.WriteLine(" =================================================");
             Console.WriteLine();
 
             DistanceConverter converter = new DistanceConverter();
-            converter.Run();
+
+            converter.MilesToFeet();
+            converter.FeetToMiles();
+            converter.MilesToMetres();
         }
     }
 }
