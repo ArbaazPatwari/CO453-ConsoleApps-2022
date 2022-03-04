@@ -11,21 +11,21 @@ namespace ConsoleAppProject.App01
     /// </author>
     public class DistanceConverter
     {
-        public const double CENTIMETRES_IN_FEET = 0.0328084;
-        public const double CENTIMETRES_IN_YARDS = 0.0109361;
-        public const double CENTIMETRES_IN_METRES = 0.01;
-        public const double CENTIMETRES_IN_KILOMETRES = 0.00001;
-        public const double CENTIMETRES_IN_MILES = 0.0000062137;
-        public const double FEET_IN_YARDS = 0.333333;
-        public const double FEET_IN_METRES = 0.3048;
-        public const double FEET_IN_KILOMETRES = 0.0003048;
-        public const double FEET_IN_MILES = 0.000189394;
-        public const double YARDS_IN_METRES = 0.9144;
-        public const double YARDS_IN_KILOMETRES = 0.0009144;
-        public const double YARDS_IN_MILES = 0.000568182;
+        public const double CENTIMETRES_IN_FEET = 30.48;
+        public const double CENTIMETRES_IN_YARDS = 91.44;
+        public const double CENTIMETRES_IN_METRES = 100;
+        public const double CENTIMETRES_IN_KILOMETRES = 100000;
+        public const double CENTIMETRES_IN_MILES = 160934;
+        public const double FEET_IN_YARDS = 3;
+        public const double FEET_IN_METRES = 3.28084;
+        public const double FEET_IN_KILOMETRES = 3280.84;
+        public const double FEET_IN_MILES = 5280;
+        public const double YARDS_IN_METRES = 1.09361;
+        public const double YARDS_IN_KILOMETRES = 1093.61;
+        public const double YARDS_IN_MILES = 1760;
         public const double METRES_IN_KILOMETRES = 1000;
         public const double METRES_IN_MILES = 1609;
-        public const double KILOMETRES_IN_MILES = 0.621371;
+        public const double KILOMETRES_IN_MILES = 1.60934;
 
         public const string CENTIMETRES = "Centimetres";
         public const string FEET = "Feet";
@@ -108,9 +108,9 @@ namespace ConsoleAppProject.App01
             Console.WriteLine($" 1. {CENTIMETRES}");
             Console.WriteLine($" 2. {FEET}");
             Console.WriteLine($" 3. {YARDS}");
-            Console.WriteLine($" 3. {METRES}");
-            Console.WriteLine($" 3. {KILOMETRES}");
-            Console.WriteLine($" 3. {MILES}");
+            Console.WriteLine($" 4. {METRES}");
+            Console.WriteLine($" 5. {KILOMETRES}");
+            Console.WriteLine($" 6. {MILES}");
             Console.WriteLine();
 
             Console.WriteLine(prompt);
@@ -127,13 +127,117 @@ namespace ConsoleAppProject.App01
 
         private void CalculateDistance()
         {
-            if (fromUnit == MILES && toUnit == FEET)
+            if (fromUnit == CENTIMETRES && toUnit == FEET)
+            {
+                toDistance = fromDistance / CENTIMETRES_IN_METRES;
+            }
+            else if (fromUnit == FEET && toUnit == CENTIMETRES)
+            {
+                toDistance = fromDistance * CENTIMETRES_IN_METRES;
+            }
+            else if (fromUnit == CENTIMETRES && toUnit == YARDS)
+            {
+                toDistance = fromDistance / CENTIMETRES_IN_YARDS;
+            }
+            else if (fromUnit == YARDS && toUnit == CENTIMETRES)
+            {
+                toDistance = fromDistance * CENTIMETRES_IN_YARDS;
+            }
+            else if (fromUnit == CENTIMETRES && toUnit == METRES)
+            {
+                toDistance = fromDistance / CENTIMETRES_IN_METRES;
+            }
+            else if (fromUnit == METRES && toUnit == CENTIMETRES)
+            {
+                toDistance = fromDistance * CENTIMETRES_IN_METRES;
+            }
+            else if (fromUnit == CENTIMETRES && toUnit == KILOMETRES)
+            {
+                toDistance = fromDistance / CENTIMETRES_IN_KILOMETRES;
+            }
+            else if (fromUnit == CENTIMETRES && toUnit == MILES)
+            {
+                toDistance = fromDistance * CENTIMETRES_IN_KILOMETRES;
+            }
+            else if (fromUnit == FEET && toUnit == YARDS)
+            {
+                toDistance = fromDistance / FEET_IN_YARDS;
+            }
+            else if (fromUnit == YARDS && toUnit == FEET)
+            {
+                toDistance = fromDistance * FEET_IN_YARDS;
+            }
+            else if (fromUnit == FEET && toUnit == METRES)
+            {
+                toDistance = fromDistance / FEET_IN_METRES;
+            }
+            else if (fromUnit == METRES && toUnit == FEET)
+            {
+                toDistance = fromDistance * FEET_IN_METRES;
+            }
+            else if (fromUnit == FEET && toUnit == KILOMETRES)
+            {
+                toDistance = fromDistance / FEET_IN_KILOMETRES;
+            }
+            else if (fromUnit == KILOMETRES && toUnit == FEET)
+            {
+                toDistance = fromDistance * FEET_IN_KILOMETRES;
+            }
+            else if (fromUnit == FEET && toUnit == MILES)
+            {
+                toDistance = fromDistance / FEET_IN_MILES;
+            }
+            else if (fromUnit == MILES && toUnit == FEET)
             {
                 toDistance = fromDistance * FEET_IN_MILES;
             }
-            else if (fromUnit == FEET && toUnit == MILES)
-            { 
-            
+            else if (fromUnit == YARDS && toUnit == METRES)
+            {
+                toDistance = fromDistance / YARDS_IN_METRES;
+            }
+            else if (fromUnit == METRES && toUnit == YARDS)
+            {
+                toDistance = fromDistance * YARDS_IN_METRES;
+            }
+            else if (fromUnit == YARDS && toUnit == KILOMETRES)
+            {
+                toDistance = fromDistance / YARDS_IN_KILOMETRES;
+            }
+            else if (fromUnit == KILOMETRES && toUnit == YARDS)
+            {
+                toDistance = fromDistance * YARDS_IN_KILOMETRES;
+            }
+            else if (fromUnit == YARDS && toUnit == MILES)
+            {
+                toDistance = fromDistance / YARDS_IN_MILES;
+            }
+            else if (fromUnit == MILES && toUnit == YARDS)
+            {
+                toDistance = fromDistance * YARDS_IN_MILES;
+            }
+            else if (fromUnit == METRES && toUnit == KILOMETRES)
+            {
+                toDistance = fromDistance / METRES_IN_KILOMETRES;
+            }
+            else if (fromUnit == KILOMETRES && toUnit == METRES)
+            {
+                toDistance = fromDistance * METRES_IN_KILOMETRES;
+            }
+            else if (fromUnit == METRES && toUnit == MILES)
+            {
+                toDistance = fromDistance / METRES_IN_MILES;
+            }
+            else if (fromUnit == MILES && toUnit == METRES)
+            {
+                toDistance = fromDistance * METRES_IN_MILES;
+            }
+            else if (fromUnit == KILOMETRES && toUnit == MILES)
+            {
+                toDistance = fromDistance / KILOMETRES_IN_MILES;
+            }
+            else if (fromUnit == MILES && toUnit == KILOMETRES)
+            {
+                toDistance = fromDistance * KILOMETRES_IN_MILES;
             }
         }
 
