@@ -24,7 +24,7 @@ namespace ConsoleAppProject.App01
         public const double YARDS_IN_KILOMETRES = 1093.61;
         public const double YARDS_IN_MILES = 1760;
         public const double METRES_IN_KILOMETRES = 1000;
-        public const double METRES_IN_MILES = 1609;
+        public const double METRES_IN_MILES = 1609.34;
         public const double KILOMETRES_IN_MILES = 1.60934;
 
         public const string CENTIMETRES = "Centimetres";
@@ -51,12 +51,13 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void ConvertDistance()
         {
-            fromUnit = SelectUnit("Please select an initial distance unit > ");
-            toUnit = SelectUnit("Please select the final distance unit > ");
+            OutputHeading();
 
-            OutputHeading($"Converting {fromUnit} to {toUnit}: ");
+            fromUnit = SelectUnit(" Please select an initial distance unit > ");
+            toUnit = SelectUnit(" Please select the final distance unit > ");
 
-            fromDistance = InputDistance($"Please enter the number of {fromUnit} > ");
+            Console.WriteLine($"\n Converting {fromUnit} to {toUnit}: ");
+            fromDistance = InputDistance($" Please enter the number of {fromUnit} > ");
 
             CalculateDistance();
 
@@ -69,7 +70,9 @@ namespace ConsoleAppProject.App01
         private string SelectUnit(string prompt)
         {
             string choice = DisplayChoices(prompt);
-            return ExecuteChoice(choice);
+            string unit = ExecuteChoice(choice);
+            Console.WriteLine($"\n You have chosen {unit}");
+            return unit;
         }
 
         private string ExecuteChoice(string choice)
@@ -243,10 +246,10 @@ namespace ConsoleAppProject.App01
 
         private void OutputDistance()
         {
-            Console.WriteLine($" {fromDistance} {fromUnit} is {toDistance} {toUnit}");
+            Console.WriteLine($"\n {fromDistance} {fromUnit} is {toDistance} {toUnit}");
         }
 
-        private void OutputHeading(String prompt)
+        private void OutputHeading()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------");
@@ -254,7 +257,6 @@ namespace ConsoleAppProject.App01
             Console.WriteLine("  Author - Arbaaz Patwari       ");
             Console.WriteLine("--------------------------------");
             Console.WriteLine();
-            Console.WriteLine(prompt);
         }
     }
 }

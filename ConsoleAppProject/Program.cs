@@ -7,7 +7,7 @@ namespace ConsoleAppProject
 {
     /// <summary>
     /// The main method in this class is called first
-    /// when the application is started.  It will be used
+    /// when the application is started. It will be used
     /// to start App01 to App05 for CO453 CW1
     /// 
     /// This Project has been modified by:
