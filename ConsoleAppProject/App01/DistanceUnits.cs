@@ -9,11 +9,11 @@ namespace ConsoleAppProject.App01
     {
         [Display(Name = "No Unit")]
         NoUnit,
-        Centimetres,
-        Feet,
-        Yards,
-        Metres,
-        Kilometres,
-        Miles
+        CENTIMETRES,
+        FEET,
+        YARDS,
+        METRES,
+        KILOMETRES,
+        MILES
     }
 }

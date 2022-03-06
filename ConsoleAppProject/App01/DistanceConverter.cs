@@ -123,9 +123,27 @@ namespace ConsoleAppProject.App01
 
         private double InputDistance(string prompt)
         {
-            Console.WriteLine(prompt);
-            string value = Console.ReadLine();
-            return Convert.ToDouble(value);
+            double number = 0;
+            bool isValid;
+            do
+            {
+                Console.WriteLine(prompt);
+                string value = Console.ReadLine();
+
+                try
+                {
+                    number = Convert.ToDouble(value);
+                    isValid = false;
+                }
+                catch (Exception)
+                {
+                    isValid = true;
+                    Console.WriteLine("Invalid Number, please try again.");
+                }
+
+            } while (isValid);
+
+            return Convert.ToDouble(number);
         }
 
         private void CalculateDistance()
