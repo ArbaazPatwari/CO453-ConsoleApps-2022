@@ -69,9 +69,12 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private string SelectUnit(string prompt)
         {
-            string choice = DisplayChoices(prompt);
+            string choice = InputChoices(prompt);
+
             string unit = ExecuteChoice(choice);
+
             Console.WriteLine($"\n You have chosen {unit}");
+
             return unit;
         }
 
@@ -105,8 +108,11 @@ namespace ConsoleAppProject.App01
             return toUnit;
         }
 
-        private static string DisplayChoices(string prompt)
+        private string InputChoices(string prompt)
         {
+            double selection = 1;
+            bool isValid;
+
             Console.WriteLine();
             Console.WriteLine($" 1. {CENTIMETRES}");
             Console.WriteLine($" 2. {FEET}");
@@ -116,9 +122,33 @@ namespace ConsoleAppProject.App01
             Console.WriteLine($" 6. {MILES}");
             Console.WriteLine();
 
-            Console.WriteLine(prompt);
-            string choice = Console.ReadLine();
-            return choice;
+            do
+            {
+                Console.WriteLine(prompt);
+                string choice = Console.ReadLine();
+
+                try
+                {
+                    selection = Convert.ToDouble(choice);
+                    if (selection >= 1 && selection <= 6)
+                    {
+                        isValid = false;
+                    }
+                    else
+                    {
+                        isValid = true;
+                        Console.WriteLine("Invalid selection (out of range), please try again.");
+                    }
+                }
+                catch (Exception)
+                {
+                    isValid = true;
+                    Console.WriteLine("Invalid selection (incorrect format), please try again.");
+                }
+
+            } while (isValid);
+
+            return Convert.ToString(selection);
         }
 
         private double InputDistance(string prompt)
@@ -133,12 +163,20 @@ namespace ConsoleAppProject.App01
                 try
                 {
                     number = Convert.ToDouble(value);
-                    isValid = false;
+                    if (number > 0)
+                    {
+                        isValid = false;
+                    }
+                    else
+                    {
+                        isValid = true;
+                        Console.WriteLine("Invalid number (negative), please try again.");
+                    }
                 }
                 catch (Exception)
                 {
                     isValid = true;
-                    Console.WriteLine("Invalid Number, please try again.");
+                    Console.WriteLine("Invalid number (incorrect format), please try again.");
                 }
 
             } while (isValid);
