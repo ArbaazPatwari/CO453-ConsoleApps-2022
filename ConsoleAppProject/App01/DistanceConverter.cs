@@ -34,16 +34,16 @@ namespace ConsoleAppProject.App01
         public const string KILOMETRES = "Kilometres";
         public const string MILES = "Miles";
 
-        private double fromDistance;
-        private double toDistance;
+        public double FromDistance { get; set; }
+        public double ToDistance { get; set; }
 
-        private string fromUnit;
-        private string toUnit;
+        public string FromUnit { get; set; }
+        public string ToUnit { get; set; }
 
         public DistanceConverter()
         {
-            fromUnit = MILES;
-            toUnit = FEET;
+            FromUnit = MILES;
+            ToUnit = FEET;
         }
 
         /// <summary>
@@ -53,11 +53,11 @@ namespace ConsoleAppProject.App01
         {
             OutputHeading();
 
-            fromUnit = SelectUnit(" Please select an initial distance unit > ");
-            toUnit = SelectUnit(" Please select the final distance unit > ");
+            FromUnit = SelectUnit(" Please select an initial distance unit > ");
+            ToUnit = SelectUnit(" Please select the final distance unit > ");
 
-            Console.WriteLine($"\n Converting {fromUnit} to {toUnit}: ");
-            fromDistance = InputDistance($" Please enter the number of {fromUnit} > ");
+            Console.WriteLine($"\n Converting {FromUnit} to {ToUnit}: ");
+            FromDistance = InputDistance($" Please enter the number of {FromUnit} > ");
 
             CalculateDistance();
 
@@ -82,30 +82,30 @@ namespace ConsoleAppProject.App01
         {
             if (choice == "1")
             {
-                toUnit = CENTIMETRES;
+                ToUnit = CENTIMETRES;
             }
             else if (choice == "2")
             {
-                toUnit = FEET;
+                ToUnit = FEET;
             }
             else if (choice == "3")
             {
-                toUnit = YARDS;
+                ToUnit = YARDS;
             }
             else if (choice == "4")
             {
-                toUnit = METRES;
+                ToUnit = METRES;
             }
             else if (choice == "5")
             {
-                toUnit = KILOMETRES;
+                ToUnit = KILOMETRES;
             }
             else if (choice == "6")
             {
-                toUnit = MILES;
+                ToUnit = MILES;
             }
 
-            return toUnit;
+            return ToUnit;
         }
 
         private string InputChoices(string prompt)
@@ -184,125 +184,125 @@ namespace ConsoleAppProject.App01
             return Convert.ToDouble(number);
         }
 
-        private void CalculateDistance()
+        public void CalculateDistance()
         {
-            if (fromUnit == CENTIMETRES && toUnit == FEET)
+            if (FromUnit == CENTIMETRES && ToUnit == FEET)
             {
-                toDistance = fromDistance / CENTIMETRES_IN_METRES;
+                ToDistance = FromDistance / CENTIMETRES_IN_METRES;
             }
-            else if (fromUnit == FEET && toUnit == CENTIMETRES)
+            else if (FromUnit == FEET && ToUnit == CENTIMETRES)
             {
-                toDistance = fromDistance * CENTIMETRES_IN_METRES;
+                ToDistance = FromDistance * CENTIMETRES_IN_METRES;
             }
-            else if (fromUnit == CENTIMETRES && toUnit == YARDS)
+            else if (FromUnit == CENTIMETRES && ToUnit == YARDS)
             {
-                toDistance = fromDistance / CENTIMETRES_IN_YARDS;
+                ToDistance = FromDistance / CENTIMETRES_IN_YARDS;
             }
-            else if (fromUnit == YARDS && toUnit == CENTIMETRES)
+            else if (FromUnit == YARDS && ToUnit == CENTIMETRES)
             {
-                toDistance = fromDistance * CENTIMETRES_IN_YARDS;
+                ToDistance = FromDistance * CENTIMETRES_IN_YARDS;
             }
-            else if (fromUnit == CENTIMETRES && toUnit == METRES)
+            else if (FromUnit == CENTIMETRES && ToUnit == METRES)
             {
-                toDistance = fromDistance / CENTIMETRES_IN_METRES;
+                ToDistance = FromDistance / CENTIMETRES_IN_METRES;
             }
-            else if (fromUnit == METRES && toUnit == CENTIMETRES)
+            else if (FromUnit == METRES && ToUnit == CENTIMETRES)
             {
-                toDistance = fromDistance * CENTIMETRES_IN_METRES;
+                ToDistance = FromDistance * CENTIMETRES_IN_METRES;
             }
-            else if (fromUnit == CENTIMETRES && toUnit == KILOMETRES)
+            else if (FromUnit == CENTIMETRES && ToUnit == KILOMETRES)
             {
-                toDistance = fromDistance / CENTIMETRES_IN_KILOMETRES;
+                ToDistance = FromDistance / CENTIMETRES_IN_KILOMETRES;
             }
-            else if (fromUnit == CENTIMETRES && toUnit == MILES)
+            else if (FromUnit == CENTIMETRES && ToUnit == MILES)
             {
-                toDistance = fromDistance * CENTIMETRES_IN_KILOMETRES;
+                ToDistance = FromDistance * CENTIMETRES_IN_KILOMETRES;
             }
-            else if (fromUnit == FEET && toUnit == YARDS)
+            else if (FromUnit == FEET && ToUnit == YARDS)
             {
-                toDistance = fromDistance / FEET_IN_YARDS;
+                ToDistance = FromDistance / FEET_IN_YARDS;
             }
-            else if (fromUnit == YARDS && toUnit == FEET)
+            else if (FromUnit == YARDS && ToUnit == FEET)
             {
-                toDistance = fromDistance * FEET_IN_YARDS;
+                ToDistance = FromDistance * FEET_IN_YARDS;
             }
-            else if (fromUnit == FEET && toUnit == METRES)
+            else if (FromUnit == FEET && ToUnit == METRES)
             {
-                toDistance = fromDistance / FEET_IN_METRES;
+                ToDistance = FromDistance / FEET_IN_METRES;
             }
-            else if (fromUnit == METRES && toUnit == FEET)
+            else if (FromUnit == METRES && ToUnit == FEET)
             {
-                toDistance = fromDistance * FEET_IN_METRES;
+                ToDistance = FromDistance * FEET_IN_METRES;
             }
-            else if (fromUnit == FEET && toUnit == KILOMETRES)
+            else if (FromUnit == FEET && ToUnit == KILOMETRES)
             {
-                toDistance = fromDistance / FEET_IN_KILOMETRES;
+                ToDistance = FromDistance / FEET_IN_KILOMETRES;
             }
-            else if (fromUnit == KILOMETRES && toUnit == FEET)
+            else if (FromUnit == KILOMETRES && ToUnit == FEET)
             {
-                toDistance = fromDistance * FEET_IN_KILOMETRES;
+                ToDistance = FromDistance * FEET_IN_KILOMETRES;
             }
-            else if (fromUnit == FEET && toUnit == MILES)
+            else if (FromUnit == FEET && ToUnit == MILES)
             {
-                toDistance = fromDistance / FEET_IN_MILES;
+                ToDistance = FromDistance / FEET_IN_MILES;
             }
-            else if (fromUnit == MILES && toUnit == FEET)
+            else if (FromUnit == MILES && ToUnit == FEET)
             {
-                toDistance = fromDistance * FEET_IN_MILES;
+                ToDistance = FromDistance * FEET_IN_MILES;
             }
-            else if (fromUnit == YARDS && toUnit == METRES)
+            else if (FromUnit == YARDS && ToUnit == METRES)
             {
-                toDistance = fromDistance / YARDS_IN_METRES;
+                ToDistance = FromDistance / YARDS_IN_METRES;
             }
-            else if (fromUnit == METRES && toUnit == YARDS)
+            else if (FromUnit == METRES && ToUnit == YARDS)
             {
-                toDistance = fromDistance * YARDS_IN_METRES;
+                ToDistance = FromDistance * YARDS_IN_METRES;
             }
-            else if (fromUnit == YARDS && toUnit == KILOMETRES)
+            else if (FromUnit == YARDS && ToUnit == KILOMETRES)
             {
-                toDistance = fromDistance / YARDS_IN_KILOMETRES;
+                ToDistance = FromDistance / YARDS_IN_KILOMETRES;
             }
-            else if (fromUnit == KILOMETRES && toUnit == YARDS)
+            else if (FromUnit == KILOMETRES && ToUnit == YARDS)
             {
-                toDistance = fromDistance * YARDS_IN_KILOMETRES;
+                ToDistance = FromDistance * YARDS_IN_KILOMETRES;
             }
-            else if (fromUnit == YARDS && toUnit == MILES)
+            else if (FromUnit == YARDS && ToUnit == MILES)
             {
-                toDistance = fromDistance / YARDS_IN_MILES;
+                ToDistance = FromDistance / YARDS_IN_MILES;
             }
-            else if (fromUnit == MILES && toUnit == YARDS)
+            else if (FromUnit == MILES && ToUnit == YARDS)
             {
-                toDistance = fromDistance * YARDS_IN_MILES;
+                ToDistance = FromDistance * YARDS_IN_MILES;
             }
-            else if (fromUnit == METRES && toUnit == KILOMETRES)
+            else if (FromUnit == METRES && ToUnit == KILOMETRES)
             {
-                toDistance = fromDistance / METRES_IN_KILOMETRES;
+                ToDistance = FromDistance / METRES_IN_KILOMETRES;
             }
-            else if (fromUnit == KILOMETRES && toUnit == METRES)
+            else if (FromUnit == KILOMETRES && ToUnit == METRES)
             {
-                toDistance = fromDistance * METRES_IN_KILOMETRES;
+                ToDistance = FromDistance * METRES_IN_KILOMETRES;
             }
-            else if (fromUnit == METRES && toUnit == MILES)
+            else if (FromUnit == METRES && ToUnit == MILES)
             {
-                toDistance = fromDistance / METRES_IN_MILES;
+                ToDistance = FromDistance / METRES_IN_MILES;
             }
-            else if (fromUnit == MILES && toUnit == METRES)
+            else if (FromUnit == MILES && ToUnit == METRES)
             {
-                toDistance = fromDistance * METRES_IN_MILES;
+                ToDistance = FromDistance * METRES_IN_MILES;
             }
-            else if (fromUnit == KILOMETRES && toUnit == MILES)
+            else if (FromUnit == KILOMETRES && ToUnit == MILES)
             {
-                toDistance = fromDistance / KILOMETRES_IN_MILES;
+                ToDistance = FromDistance / KILOMETRES_IN_MILES;
             }
-            else if (fromUnit == MILES && toUnit == KILOMETRES)
+            else if (FromUnit == MILES && ToUnit == KILOMETRES)
             {
-                toDistance = fromDistance * KILOMETRES_IN_MILES;
+                ToDistance = FromDistance * KILOMETRES_IN_MILES;
             }
         }
 
         private void OutputDistance()
         {
-            Console.WriteLine($"\n {fromDistance} {fromUnit} is {toDistance} {toUnit}");
+            Console.WriteLine($"\n {FromDistance} {FromUnit} is {ToDistance} {ToUnit}");
         }
 
         private void OutputHeading()
