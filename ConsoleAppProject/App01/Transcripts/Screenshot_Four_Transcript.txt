@@ -1,0 +1,42 @@
+
+=================================================
+    BNU CO453 Applications Programming 2022
+        by Arbaaz Patwari
+=================================================
+
+
+--------------------------------
+  App 1 - Distance Converter
+  Author - Arbaaz Patwari
+--------------------------------
+
+
+ 1. Centimetres
+ 2. Feet
+ 3. Yards
+ 4. Metres
+ 5. Kilometres
+ 6. Miles
+
+ Please select an initial distance unit >
+5
+
+ You have chosen Kilometres
+
+ 1. Centimetres
+ 2. Feet
+ 3. Yards
+ 4. Metres
+ 5. Kilometres
+ 6. Miles
+
+ Please select the final distance unit >
+3
+
+ You have chosen Yards
+
+ Converting Kilometres to Yards:
+ Please enter the number of Kilometres >
+11
+
+ 11 Kilometres is 12029.71 Yards

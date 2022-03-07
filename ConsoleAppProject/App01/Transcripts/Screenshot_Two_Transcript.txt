@@ -1,0 +1,51 @@
+
+=================================================
+    BNU CO453 Applications Programming 2022
+        by Arbaaz Patwari
+=================================================
+
+
+--------------------------------
+  App 1 - Distance Converter
+  Author - Arbaaz Patwari
+--------------------------------
+
+
+ 1. Centimetres
+ 2. Feet
+ 3. Yards
+ 4. Metres
+ 5. Kilometres
+ 6. Miles
+
+ Please select an initial distance unit >
+6
+
+ You have chosen Miles
+
+ 1. Centimetres
+ 2. Feet
+ 3. Yards
+ 4. Metres
+ 5. Kilometres
+ 6. Miles
+
+ Please select the final distance unit >
+2
+
+ You have chosen Feet
+
+ Converting Miles to Feet:
+ Please enter the number of Miles >
+3mi
+Invalid number (incorrect format), please try again.
+ Please enter the number of Miles >
+-6
+Invalid number (negative), please try again.
+ Please enter the number of Miles >
+a
+Invalid number (incorrect format), please try again.
+ Please enter the number of Miles >
+4
+
+ 4 Miles is 21120 Feet
