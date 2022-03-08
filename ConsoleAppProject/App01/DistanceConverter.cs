@@ -1,10 +1,12 @@
 ﻿using System;
+using ConsoleAppProject.Helpers;
 
 namespace ConsoleAppProject.App01
 {
     /// <summary>
-    /// This app converts a user-input distance measure in one unit (fromUnit)
-    /// and this will be calculate and outputted as another user-selected unit (toUnit).
+    /// This app converts a distance value from one unit to another. It accepts a user-input 
+    /// initial unit (fromUnit), final unit (toUnit), and distance value (fromDistance). The
+    /// values muse be entered correctly, not negative or containing letters.
     /// </summary>
     /// <author>
     /// Arbaaz Patwari: 24/2/2022
@@ -51,7 +53,7 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void ConvertDistance()
         {
-            OutputHeading();
+            ConsoleHelper.OutputHeading("App 1 - Distance Converter");
 
             FromUnit = SelectUnit(" Please select an initial distance unit > ");
             ToUnit = SelectUnit(" Please select the final distance unit > ");
@@ -78,6 +80,9 @@ namespace ConsoleAppProject.App01
             return unit;
         }
 
+        /// <summary>
+        /// Handles the selection of a choice and returns it 
+        /// </summary>
         private string ExecuteChoice(string choice)
         {
             if (choice == "1")
@@ -108,10 +113,13 @@ namespace ConsoleAppProject.App01
             return ToUnit;
         }
 
+        /// <summary>
+        /// Handles the selection of input choices from the range below
+        /// </summary>
         private string InputChoices(string prompt)
         {
             double selection = 1;
-            bool isValid;
+            bool inValid;
 
             Console.WriteLine();
             Console.WriteLine($" 1. {CENTIMETRES}");
@@ -132,25 +140,28 @@ namespace ConsoleAppProject.App01
                     selection = Convert.ToDouble(choice);
                     if (selection >= 1 && selection <= 6)
                     {
-                        isValid = false;
+                        inValid = false;
                     }
                     else
                     {
-                        isValid = true;
+                        inValid = true;
                         Console.WriteLine("Invalid selection (out of range), please try again.");
                     }
                 }
                 catch (Exception)
                 {
-                    isValid = true;
+                    inValid = true;
                     Console.WriteLine("Invalid selection (incorrect format), please try again.");
                 }
 
-            } while (isValid);
+            } while (inValid);
 
             return Convert.ToString(selection);
         }
 
+        /// <summary>
+        /// Handles inputting a valid distance unit for conversion
+        /// </summary>
         private double InputDistance(string prompt)
         {
             double number = 0;
@@ -184,6 +195,9 @@ namespace ConsoleAppProject.App01
             return Convert.ToDouble(number);
         }
 
+        /// <summary>
+        /// Method that calculates each possible distance conversion via multiplying/ dividing constants
+        /// </summary>
         public void CalculateDistance()
         {
             if (FromUnit == CENTIMETRES && ToUnit == FEET)
@@ -300,19 +314,12 @@ namespace ConsoleAppProject.App01
             }
         }
 
+        /// <summary>
+        /// Ending message after calculation has completed
+        /// </summary>
         private void OutputDistance()
         {
             Console.WriteLine($"\n {FromDistance} {FromUnit} is {ToDistance} {ToUnit}");
-        }
-
-        private void OutputHeading()
-        {
-            Console.WriteLine();
-            Console.WriteLine("--------------------------------");
-            Console.WriteLine("  App 1 - Distance Converter    ");
-            Console.WriteLine("  Author - Arbaaz Patwari       ");
-            Console.WriteLine("--------------------------------");
-            Console.WriteLine();
         }
     }
 }

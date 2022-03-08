@@ -2,7 +2,6 @@
 
 namespace ConsoleAppProject.Helpers
 {
-
     /// <summary>
     /// This is a general purpose class containing methods
     /// that can be used by other console based classes.
@@ -16,7 +15,6 @@ namespace ConsoleAppProject.Helpers
     /// </summary>
     public static class ConsoleHelper
     {
-
         /// <summary>
         /// This method displays a list of numbered choices to the
         /// user, they can then select a choice and and the choice 
@@ -50,7 +48,6 @@ namespace ConsoleAppProject.Helpers
             }
         }
 
-
         /// <summary>
         /// This method will display a prompt to the user and
         /// will return any number as a double.  Any exception
@@ -82,7 +79,6 @@ namespace ConsoleAppProject.Helpers
             return number;
         }
 
-
         /// <summary>
         /// This method will prompt the user to enter a number
         /// between the min and max values includice.
@@ -110,7 +106,6 @@ namespace ConsoleAppProject.Helpers
             } while (!isValid);
 
             return number;
-
         }
 
         /// <summary>
@@ -121,15 +116,10 @@ namespace ConsoleAppProject.Helpers
         /// </summary>
         public static void OutputHeading(string heading)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-
-            Console.WriteLine("\n ---------------------------------");
-            Console.WriteLine($"    {heading}          ");
-            Console.WriteLine("     by Arbaaz Patwari           ");
-            Console.WriteLine(" ---------------------------------" +
-                "\n");
-
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n----------------------------------");
+            Console.WriteLine($"    {heading}                      ");
+            Console.WriteLine("       by Arbaaz Patwari            ");
+            Console.WriteLine("----------------------------------\n");
         }
 
         /// <summary>
