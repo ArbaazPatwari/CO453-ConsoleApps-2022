@@ -233,11 +233,13 @@ namespace ConsoleAppProject.App02
                 double RootHeight = HeightValue / FEET_IN_METRES;
                 double RootWeight = WeightValue * KILOGRAMS_IN_STONE;
                 BMIValue = RootWeight / Math.Pow(RootHeight, 2);
+                BMIValue = Math.Round(BMIValue, 1);
             }
             else 
             {
                 double RootHeight = HeightValue / CENTIMETRES_IN_METRES;
                 BMIValue = WeightValue / Math.Pow(RootHeight, 2);
+                BMIValue = Math.Round(BMIValue, 1);
             }
         }
 
@@ -247,12 +249,12 @@ namespace ConsoleAppProject.App02
         /// </summary>
         private void OutputBMIResult()
         {
-            if (BMIValue <= 18.5)
+            if (BMIValue <= 18.49)
             {
                 Console.WriteLine();
                 Console.WriteLine($"Your BMI score is: {BMIValue}. This is categorised by the WHO as 'underweight'.");
             }
-            else if (BMIValue >= 18.6 && BMIValue <= 24.9)
+            else if (BMIValue >= 18.5 && BMIValue <= 24.9)
             {
                 Console.WriteLine();
                 Console.WriteLine($"Your BMI score is: {BMIValue}. This is categorised by the WHO as 'Normal'.");
