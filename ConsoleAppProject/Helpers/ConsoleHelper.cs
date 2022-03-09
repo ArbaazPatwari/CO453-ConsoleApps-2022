@@ -116,10 +116,10 @@ namespace ConsoleAppProject.Helpers
         /// </summary>
         public static void OutputHeading(string heading)
         {
-            Console.WriteLine("\n----------------------------------");
+            Console.WriteLine("\n---------------------------------------------");
             Console.WriteLine($"    {heading}                      ");
             Console.WriteLine("       by Arbaaz Patwari            ");
-            Console.WriteLine("----------------------------------\n");
+            Console.WriteLine("---------------------------------------------\n");
         }
 
         /// <summary>

@@ -1,0 +1,47 @@
+
+===============================================
+    BNU CO453 Applications Programming 2022
+        by Arbaaz Patwari
+===============================================
+
+App Library - Arbaaz Patwari
+-------------------------------------
+1) App 1 - Distance Converter
+2) App 2 - Body Mass Index Calculator
+3) App 3 - Student Marks
+4) App 4 - Social Network
+5) App 5 - RPG Game
+6) Quit
+
+Please enter your choice of app >
+2
+
+---------------------------------------------
+     App 2 - Body Mass Index Calculator
+       by Arbaaz Patwari
+---------------------------------------------
+
+
+1. Metric
+2. Imperial
+
+ Please select either the Imperial or Metric System >
+1
+Converting your height and weight to BMI in Metric units:
+
+ Please enter your exact height in CENTIMETRES/FEET >
+180
+
+ Please enter your exact weight in KILOGRAMS/STONE >
+80
+
+ Using 180 height and 80 weight to achieve your BMI Score:
+
+Your BMI score is: 24.691358024691358. This is categorised by the WHO as 'Normal'.
+
+Black, Asian, and other minority groups have a higher risk
+of developing some long tern (chronic) conditions, such as type 2 diabetes
+
+These adults with a BMI of:
+  23 or more are of increased risk
+  27.5 or more are at high risk

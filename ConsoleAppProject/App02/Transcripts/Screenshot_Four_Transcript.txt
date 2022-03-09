@@ -1,0 +1,38 @@
+
+===============================================
+    BNU CO453 Applications Programming 2022
+        by Arbaaz Patwari
+===============================================
+
+App Library - Arbaaz Patwari
+-------------------------------------
+1) App 1 - Distance Converter
+2) App 2 - Body Mass Index Calculator
+3) App 3 - Student Marks
+4) App 4 - Social Network
+5) App 5 - RPG Game
+6) Quit
+
+Please enter your choice of app >
+2
+
+---------------------------------------------
+     App 2 - Body Mass Index Calculator
+       by Arbaaz Patwari
+---------------------------------------------
+
+
+1. Metric
+2. Imperial
+
+ Please select either the Imperial or Metric System >
+x
+Invalid selection (incorrect format), please try again.
+ Please select either the Imperial or Metric System >
+9
+Invalid selection (out of range), please try again.
+ Please select either the Imperial or Metric System >
+2
+Converting your height and weight to BMI in Imperial units:
+
+ Please enter your exact height in CENTIMETRES/FEET >
