@@ -247,7 +247,7 @@ namespace ConsoleAppProject.App02
         /// Method that checks the range of the output BMI value, then writes a specific
         /// message to the user including the weight class the score is associated with
         /// </summary>
-        private void OutputBMIResult()
+        public void OutputBMIResult()
         {
             if (BMIValue <= 18.49)
             {
