@@ -42,6 +42,9 @@ namespace ConsoleAppProject.App01
         public string FromUnit { get; set; }
         public string ToUnit { get; set; }
 
+        /// <summary>
+        /// This is the Constructor and it creates a DistanceConverter object.
+        /// </summary>
         public DistanceConverter()
         {
             FromUnit = MILES;
@@ -67,7 +70,7 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        /// Display a menu of distance units then prompts the user to select one and returns it
+        /// Handles the selection and return of an input unit
         /// </summary>
         private string SelectUnit(string prompt)
         {
@@ -81,7 +84,7 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        /// Handles the selection of a choice and returns it 
+        /// Executes a choice and returns it as a string
         /// </summary>
         private string ExecuteChoice(string choice)
         {
@@ -114,7 +117,7 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        /// Handles the selection of input choices from the range below
+        /// Displays the selection of input choices from the range below and parses a selection
         /// </summary>
         private string InputChoices(string prompt)
         {
@@ -196,7 +199,7 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        /// Method that calculates each possible distance conversion via multiplying/ dividing constants
+        /// Method that calculates each possible distance conversions via multiplying/ dividing constants
         /// </summary>
         public void CalculateDistance()
         {

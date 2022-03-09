@@ -4,7 +4,11 @@ using ConsoleAppProject.Helpers;
 namespace ConsoleAppProject.App02
 {
     /// <summary>
-    /// The app converts a height and weight into a BMI index score.
+    /// The app converts a height and weight into a BMI index score. It accepts 'HeightValue' height
+    /// and 'WeightValue' weight to calculate a BMI. The Conventions that can be selected are
+    /// 'Metric' and 'Imperial', and this is taken into account while calculating the BMI score.
+    /// The app did not meet outstanding requirements and is limited by only accepting one imperial 
+    /// value for height/weight rather than two and combining them.
     /// </summary>
     /// <author>
     /// Arbaaz Patwari 7/3/2022
@@ -35,6 +39,9 @@ namespace ConsoleAppProject.App02
 
         public double BMIValue { get; set; }
 
+        /// <summary>
+        /// This is the Constructor and it creates a DistanceConverter object
+        /// </summary>
         public BMI()
         {
             Convention = METRIC;
@@ -44,6 +51,9 @@ namespace ConsoleAppProject.App02
             BMIValue = 0;
         }
 
+        /// <summary>
+        /// Runs the app and executes specified methods in order
+        /// </summary>
         public void CalculateBMI()
         {
             ConsoleHelper.OutputHeading(" App 2 - Body Mass Index Calculator");
@@ -63,6 +73,9 @@ namespace ConsoleAppProject.App02
             OutputMessage();
         }
 
+        /// <summary>
+        /// Handles the selection and return of an input convention
+        /// </summary>
         private string SelectConvention(string prompt)
         {
             string choice = InputConvention(prompt);
@@ -74,6 +87,9 @@ namespace ConsoleAppProject.App02
             return convention;
         }
 
+        /// <summary>
+        /// Executes a choice and returns it as a string
+        /// </summary>
         private string ExecuteChoice(string choice)
         {
             if (choice == "1")
@@ -88,6 +104,9 @@ namespace ConsoleAppProject.App02
             return Convention;
         }
 
+        /// <summary>
+        /// Displays the selection of input conventions from the range below and parses a selection
+        /// </summary>
         private string InputConvention(string prompt)
         {
             double selection = 1;
@@ -166,6 +185,9 @@ namespace ConsoleAppProject.App02
         //    return Convert.ToString(selection);
         //}
 
+        /// <summary>
+        /// Handles the inputting of one valid value for height or weight
+        /// </summary>
         private double InputValue(string prompt)
         {
             double number = 0;
@@ -200,6 +222,10 @@ namespace ConsoleAppProject.App02
             return Convert.ToDouble(number);
         }
 
+        /// <summary>
+        /// Method that calculates the BMI score based on input values and using the formula of 
+        /// BMI = weight / (height * height)
+        /// </summary>
         public void CalculateIndex()
         {
             if (Convention == "Imperial")
@@ -215,6 +241,10 @@ namespace ConsoleAppProject.App02
             }
         }
 
+        /// <summary>
+        /// Method that checks the range of the output BMI value, then writes a specific
+        /// message to the user including the weight class the score is associated with
+        /// </summary>
         private void OutputBMIResult()
         {
             if (BMIValue <= 18.5)
@@ -249,6 +279,9 @@ namespace ConsoleAppProject.App02
             }
         }
 
+        /// <summary>
+        /// Health related message for BAME groups
+        /// </summary>
         private void OutputMessage()
         {
             Console.WriteLine();
