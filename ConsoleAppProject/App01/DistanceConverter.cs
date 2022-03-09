@@ -53,7 +53,7 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void ConvertDistance()
         {
-            ConsoleHelper.OutputHeading("App 1 - Distance Converter");
+            ConsoleHelper.OutputHeading(" App 1 - Distance Converter");
 
             FromUnit = SelectUnit(" Please select an initial distance unit > ");
             ToUnit = SelectUnit(" Please select the final distance unit > ");
@@ -145,13 +145,13 @@ namespace ConsoleAppProject.App01
                     else
                     {
                         inValid = true;
-                        Console.WriteLine("Invalid selection (out of range), please try again.");
+                        Console.WriteLine(" Invalid selection (out of range), please try again.");
                     }
                 }
                 catch (Exception)
                 {
                     inValid = true;
-                    Console.WriteLine("Invalid selection (incorrect format), please try again.");
+                    Console.WriteLine(" Invalid selection (incorrect format), please try again.");
                 }
 
             } while (inValid);
@@ -181,13 +181,13 @@ namespace ConsoleAppProject.App01
                     else
                     {
                         isValid = true;
-                        Console.WriteLine("Invalid number (negative), please try again.");
+                        Console.WriteLine(" Invalid number (negative), please try again.");
                     }
                 }
                 catch (Exception)
                 {
                     isValid = true;
-                    Console.WriteLine("Invalid number (incorrect format), please try again.");
+                    Console.WriteLine(" Invalid number (incorrect format), please try again.");
                 }
 
             } while (isValid);
@@ -319,7 +319,7 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void OutputDistance()
         {
-            Console.WriteLine($"\n {FromDistance} {FromUnit} is {ToDistance} {ToUnit}");
+            Console.WriteLine($" \n {FromDistance} {FromUnit} is {ToDistance} {ToUnit}");
         }
     }
 }
