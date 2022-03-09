@@ -28,7 +28,7 @@ namespace ConsoleAppProject.App02
         public const string ADULT = "Adult";
         public const string CHILD = "Child";
 
-        public string Age { get; set; }
+        //public string Age { get; set; }
         public string Convention { get; set; }
         public double WeightValue { get; set; }
         public double HeightValue { get; set; }
@@ -38,7 +38,7 @@ namespace ConsoleAppProject.App02
         public BMI()
         {
             Convention = METRIC;
-            Age = ADULT;
+            //Age = ADULT;
             HeightValue = 0;
             WeightValue = 0;
             BMIValue = 0;
@@ -51,10 +51,10 @@ namespace ConsoleAppProject.App02
             Convention = SelectConvention(" Please select either the Imperial or Metric System > ");
             //Age = SelectAge("Please select whether you are an adult or child > ");
 
-            HeightValue = InputValue(" Please enter your exact height in CENTIMETRES/FEET > ");
-            WeightValue = InputValue(" Please enter your exact weight in KILOGRAMS/STONE > ");
+            HeightValue = InputValue("\n Please enter your exact height in CENTIMETRES/FEET > ");
+            WeightValue = InputValue("\n Please enter your exact weight in KILOGRAMS/STONE > ");
 
-            Console.WriteLine($" Using {HeightValue} height and {WeightValue} weight to achieve your BMI Score: ");
+            Console.WriteLine($"\n Using {HeightValue} height and {WeightValue} weight to achieve your BMI Score: ");
 
             CalculateIndex();
 
