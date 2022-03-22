@@ -22,7 +22,7 @@ namespace ConsoleAppProject
 
         private static BMI calculator = new BMI();
 
-        private static StudentGrades marks = new StudentGrades();
+        private static StudentMarks marker = new StudentMarks();
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -40,7 +40,7 @@ namespace ConsoleAppProject
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("1) App 1 - Distance Converter");
             Console.WriteLine("2) App 2 - Body Mass Index Calculator");
-            Console.WriteLine("3) App 3 - Student Marks");
+            Console.WriteLine("3) App 3 - Student Marker");
             Console.WriteLine("4) App 4 - Social Network");
             Console.WriteLine("5) App 5 - RPG Game");
             Console.WriteLine("6) Quit");
@@ -60,7 +60,8 @@ namespace ConsoleAppProject
                 calculator.CalculateBMI();
             }
             else if (choice == "3")
-            { 
+            {
+                marker.MarkStudents();
             }
             else if (choice == "4")
             {

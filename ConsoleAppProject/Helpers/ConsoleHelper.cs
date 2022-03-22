@@ -10,7 +10,7 @@ namespace ConsoleAppProject.Helpers
     /// There are methods for outputting a main heading
     /// and a title.
     /// <author>
-    /// Derek Peacock 2021
+    /// Arbaaz Patwari 2022
     /// </author>
     /// </summary>
     public static class ConsoleHelper
@@ -99,7 +99,7 @@ namespace ConsoleAppProject.Helpers
                 if (number < min || number > max)
                 {
                     isValid = false;
-                    Console.WriteLine($"Number must be between {min} and {max}");
+                    Console.WriteLine($"Invalid number (out of range). Number must be between {min} and {max}");
                 }
                 else isValid = true;
 
