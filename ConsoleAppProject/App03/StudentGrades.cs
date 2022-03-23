@@ -33,10 +33,9 @@ namespace ConsoleAppProject.App03
 
         public double Mean { get; set; }
 
-        public int Mininmum { get; set; }
+        public int Minimum { get; set; }
 
         public int Maximum { get; set; }
-        public object Minimum { get; private set; }
 
         /// <summary>
         /// Constructor for the class, instantiating the student objects and creating a Students 
@@ -178,10 +177,6 @@ namespace ConsoleAppProject.App03
 
         public void OutputGradeProfile()
         {
-            for (int index = 0; index < MAXN_STUDENTS; index++)
-            {
-               
-            }
         }
 
         public void CalculateGradeProfile()
