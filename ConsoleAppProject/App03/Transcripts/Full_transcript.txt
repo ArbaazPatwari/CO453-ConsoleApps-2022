@@ -1,0 +1,84 @@
+
+===============================================
+    BNU CO453 Applications Programming 2022
+        by Arbaaz Patwari
+===============================================
+
+App Library - Arbaaz Patwari
+-------------------------------------
+1) App 1 - Distance Converter
+2) App 2 - Body Mass Index Calculator
+3) App 3 - Student Marker
+4) App 4 - Social Network
+5) App 5 - RPG Game
+6) Quit
+
+Please enter your choice of app >
+3
+
+---------------------------------------------
+    App 3 - Student Marker
+       by Arbaaz Patwari
+---------------------------------------------
+
+
+1. Input Marks
+2. Output Grades
+3. Output Stats
+4. Output Grade Profile
+5. Quit
+
+Please select an option >
+1
+The students are: Artemis, Bilal, Catalina, Donovan, Eve, Franko, Gale, Hiro, Itzel, Jorge
+
+Please enter a mark for each student >
+Please enter mark for Artemis 34
+Please enter mark for Bilal 56
+Please enter mark for Catalina 77
+Please enter mark for Donovan 89
+Please enter mark for Eve 65
+Please enter mark for Franko 39
+Please enter mark for Gale 74
+Please enter mark for Hiro 68
+Please enter mark for Itzel 92
+Please enter mark for Jorge 86
+
+---------------------------------------------
+    App 3 - Student Marker
+       by Arbaaz Patwari
+---------------------------------------------
+
+
+1. Input Marks
+2. Output Grades
+3. Output Stats
+4. Output Grade Profile
+5. Quit
+
+Please select an option >
+2
+Artemis mark = 34 grade = F
+Bilal mark = 56 grade = C
+Catalina mark = 77 grade = A
+Donovan mark = 89 grade = A
+Eve mark = 65 grade = B
+Franko mark = 39 grade = F
+Gale mark = 74 grade = A
+Hiro mark = 68 grade = B
+Itzel mark = 92 grade = A
+Jorge mark = 86 grade = A
+
+---------------------------------------------
+    App 3 - Student Marker
+       by Arbaaz Patwari
+---------------------------------------------
+
+
+1. Input Marks
+2. Output Grades
+3. Output Stats
+4. Output Grade Profile
+5. Quit
+
+Please select an option >

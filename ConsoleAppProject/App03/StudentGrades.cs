@@ -1,5 +1,7 @@
 ﻿using ConsoleAppProject.Helpers;
 using ConsoleAppProject.App03;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System;
 using System.Linq;
 
@@ -29,7 +31,11 @@ namespace ConsoleAppProject.App03
 
         public int[] Marks { get; set; }
 
+        public Grades[] Grades { get; set; }
+
         public int[] GradeProfile { get; set; }
+
+        public int Sum { get; set; }
 
         public double Mean { get; set; }
 
@@ -43,10 +49,13 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public StudentMarks()
         {
-            Students = new string[] { "Artemis", "Bilal", "Catalina", "Donovan", "Eve", "Franko",
+            Students = new string[MAXN_STUDENTS] { "Artemis", "Bilal", "Catalina", "Donovan", "Eve", "Franko",
                 "Gale", "Hiro", "Itzel", "Jorge" };
-            Marks = new int[MAXN_STUDENTS];
-            GradeProfile = new int[(int)Grades.A + 1];
+            Marks = new int[MAXN_STUDENTS] { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+            Grades = new Grades[MAXN_STUDENTS] {App03.Grades.F, App03.Grades.F, App03.Grades.F,
+                                                      App03.Grades.E, App03.Grades.D, App03.Grades.C,
+                                                      App03.Grades.B, App03.Grades.A, App03.Grades.A, App03.Grades.A};
+            GradeProfile = new int[5];
         }
 
         /// <summary>
@@ -95,20 +104,14 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void InputMarks()
         {
-            Students = new string[] { "Artemis", "Bilal", "Catalina", "Donovan", "Eve", "Franko",
-                "Gale", "Hiro", "Itzel", "Jorge" };
-            Marks = new int[MAXN_STUDENTS];
-            GradeProfile = new int[(int)Grades.A];
-
             Console.WriteLine("The students are: " + String.Join(", ", Students));
             Console.WriteLine();
             Console.WriteLine("Please enter a mark for each student > ");
-            int index = 0;
 
-            foreach (string name in Students)
+            for (int i = 0; i < MAXN_STUDENTS; i++)
             {
-                int mark = (int)ConsoleHelper.InputNumber($"{name}: Enter mark > ", 0, 100);
-                Marks[index] = mark;
+                Marks[i] = (int)ConsoleHelper.InputNumber($"Please enter mark for {Students[i]} ", 0, 100);
+                Grades[i] = ConvertToGrade(Marks[i]);
             }
         }
 
@@ -117,11 +120,9 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void OutputGrades()
         {
-            for (int index = 0; index < MAXN_STUDENTS; index++)
+            for (int i = 0; i < MAXN_STUDENTS; i++)
             {
-                int mark = Marks[index];
-                Grades grade = ConvertToGrade(mark);
-                Console.WriteLine($"{Students[index]} Mark = {Marks[index]} Grade = {grade}");
+                Console.WriteLine($"{Students[i]} mark = {Marks[i]} grade = {Grades[i]}");
             }
         }
 
@@ -132,29 +133,29 @@ namespace ConsoleAppProject.App03
         {
             if (mark >= LowestMark && mark < LowestGradeE)
             {
-                return Grades.F;
+                return App03.Grades.F;
             }
             else if (mark >= LowestGradeE && mark < LowestGradeD)
             {
-                return Grades.E;
+                return App03.Grades.E;
             }
             else if (mark >= LowestGradeD && mark < LowestGradeC)
             {
-                return Grades.D;
+                return App03.Grades.D;
             }
             else if (mark >= LowestGradeC && mark < LowestGradeB)
             {
-                return Grades.C;
+                return App03.Grades.C;
             }
             else if (mark >= LowestGradeB && mark < LowestGradeA)
             {
-                return Grades.B;
+                return App03.Grades.B;
             }
             else if (mark >= LowestGradeA && mark <= HighestMark)
             {
-                return Grades.A;
+                return App03.Grades.A;
             }
-            else return Grades.NoGrade;
+            else return App03.Grades.NoGrade;
         }
 
         public void OutputStats()
@@ -170,27 +171,49 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void CalculateStats()
         {
-            Mean = (int)Marks.Average();
-            Minimum = Marks.Min();
-            Maximum = Marks.Max();
+            foreach (int mark in Marks)
+            {
+                Sum += mark;
+            }
+
+            Mean = Sum / MAXN_STUDENTS;
+        }
+
+        public void CalculateMinMax()
+        {
+            Minimum = Marks[0];
+            Maximum = Marks[0];
+            foreach (int mark in Marks)
+            {
+                if (mark < Minimum)
+                {
+                    Minimum = mark;
+                }
+                else if (mark > Maximum)
+                {
+                    Maximum = mark;
+                }
+            }
         }
 
         public void OutputGradeProfile()
         {
+            foreach (Grades val in Enum.GetValues(typeof(Grades)))
+            {
+                Console.WriteLine($"The percentage of students that got {val} is {GradeProfile[(int)val]}%");
+            }
         }
 
         public void CalculateGradeProfile()
         {
-            for (int i = 0; i < MAXN_STUDENTS; i++)
+            foreach (Grades grade in Grades)
             {
-                GradeProfile[i] = 0;
+                GradeProfile[(int)grade] += 1;
             }
-            foreach (int mark in Marks)
+
+            for (int i = 0; i < GradeProfile.Length; i++)
             {
-                Grades grade = ConvertToGrade(mark);
-                {
-                    GradeProfile[(int)grade]++;
-                }
+                GradeProfile[i] = GradeProfile[i] * 100 / MAXN_STUDENTS;
             }
         }
     }
