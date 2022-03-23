@@ -1,6 +1,7 @@
 ﻿using ConsoleAppProject.Helpers;
 using ConsoleAppProject.App03;
 using System;
+using System.Linq;
 
 namespace ConsoleAppProject.App03
 {
@@ -35,6 +36,7 @@ namespace ConsoleAppProject.App03
         public int Mininmum { get; set; }
 
         public int Maximum { get; set; }
+        public object Minimum { get; private set; }
 
         /// <summary>
         /// Constructor for the class, instantiating the student objects and creating a Students 
@@ -44,7 +46,7 @@ namespace ConsoleAppProject.App03
         {
             Students = new string[] { "Artemis", "Bilal", "Catalina", "Donovan", "Eve", "Franko",
                 "Gale", "Hiro", "Itzel", "Jorge" };
-            Marks = new int[Students.Length];
+            Marks = new int[MAXN_STUDENTS];
             GradeProfile = new int[(int)Grades.A + 1];
         }
 
@@ -96,8 +98,8 @@ namespace ConsoleAppProject.App03
         {
             Students = new string[] { "Artemis", "Bilal", "Catalina", "Donovan", "Eve", "Franko",
                 "Gale", "Hiro", "Itzel", "Jorge" };
-            Marks = new int[Students.Length];
-            GradeProfile = new int[(int)Grades.A + 1];
+            Marks = new int[MAXN_STUDENTS];
+            GradeProfile = new int[(int)Grades.A];
 
             Console.WriteLine("The students are: " + String.Join(", ", Students));
             Console.WriteLine();
@@ -120,7 +122,7 @@ namespace ConsoleAppProject.App03
             {
                 int mark = Marks[index];
                 Grades grade = ConvertToGrade(mark);
-                Console.WriteLine($"{Students[index]}  Mark = {Marks[index]}  Grade = {grade}");
+                Console.WriteLine($"{Students[index]} Mark = {Marks[index]} Grade = {grade}");
             }
         }
 
@@ -158,24 +160,33 @@ namespace ConsoleAppProject.App03
 
         public void OutputStats()
         {
+            Console.WriteLine();
+            Console.WriteLine($"Mean mark = {Mean}");
+            Console.WriteLine($"Min mark = {Minimum}");
+            Console.WriteLine($"Max mark = {Maximum}");
         }
 
         /// <summary>
         /// Calculate the minimum, maximum and mean mark for all the students
         /// </summary>
         public void CalculateStats()
-        { 
-
+        {
+            Mean = (int)Marks.Average();
+            Minimum = Marks.Min();
+            Maximum = Marks.Max();
         }
 
         public void OutputGradeProfile()
-        { 
-
+        {
+            for (int index = 0; index < MAXN_STUDENTS; index++)
+            {
+               
+            }
         }
 
         public void CalculateGradeProfile()
         {
-            for (int i = 0; i < GradeProfile.Length; i++)
+            for (int i = 0; i < MAXN_STUDENTS; i++)
             {
                 GradeProfile[i] = 0;
             }
