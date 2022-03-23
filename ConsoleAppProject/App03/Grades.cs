@@ -7,7 +7,8 @@ namespace ConsoleAppProject.App03
     /// Grade A is First Class   : 70 - 100
     /// Grade B is Upper Second  : 60 - 69
     /// Grade C is Lower Second  : 50 - 59
-    /// Grade D is Third Class   : 40 - 49
+    /// Grade D is Third Class   : 45 - 49
+    /// Grade E is Ordinary Degree: 40 - 45
     /// Grade F is Fail          :  0 - 39
     /// </summary>
     public enum Grades
@@ -18,6 +19,9 @@ namespace ConsoleAppProject.App03
         [Display(Name = "Fail")]
         [Description("Referred")]
         F,
+        [Display(Name = "Pass")]
+        [Description("Ordinary Degree")]
+        E,
         [Display(Name = "III")]
         [Description("BSc(Hons) Third Class")]
         D,

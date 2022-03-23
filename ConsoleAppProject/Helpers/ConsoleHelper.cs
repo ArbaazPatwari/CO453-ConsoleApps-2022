@@ -71,7 +71,7 @@ namespace ConsoleAppProject.Helpers
                 catch (Exception)
                 {
                     isValid = false;
-                    Console.WriteLine(" INVALID NUMBER!");
+                    Console.WriteLine("Invalid number (incorrect format).");
                 }
 
             } while (!isValid);
@@ -99,10 +99,10 @@ namespace ConsoleAppProject.Helpers
                 if (number < min || number > max)
                 {
                     isValid = false;
-                    Console.WriteLine($"Invalid number (out of range). Number must be between {min} and {max}");
+                    Console.WriteLine($"Incorrect number (out of range). Number must be between {min} and {max}");
                 }
                 else isValid = true;
-
+                
             } while (!isValid);
 
             return number;
