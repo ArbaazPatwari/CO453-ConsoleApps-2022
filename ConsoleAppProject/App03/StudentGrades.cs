@@ -158,6 +158,9 @@ namespace ConsoleAppProject.App03
             else return App03.Grades.NoGrade;
         }
 
+        /// <summary>
+        /// Outputs the minimum, maximum, and mean mark for all the students
+        /// </summary>
         public void OutputStats()
         {
             Console.WriteLine();
@@ -167,35 +170,44 @@ namespace ConsoleAppProject.App03
         }
 
         /// <summary>
-        /// Calculate the minimum, maximum and mean mark for all the students
+        /// Calculate the mean mark for all the students
         /// </summary>
         public void CalculateStats()
         {
-            foreach (int mark in Marks)
+            for (int i = 0; i < MAXN_STUDENTS; i++)
             {
-                Sum += mark;
+                foreach (int mark in Marks)
+                {
+                    Sum += mark;
+                }
             }
 
             Mean = Sum / MAXN_STUDENTS;
         }
 
+        /// <summary>
+        /// Calculates the minimum and maximum mark for all the students
+        /// </summary>
         public void CalculateMinMax()
         {
             Minimum = Marks[0];
-            Maximum = Marks[0];
+            Maximum = Marks[9];
             foreach (int mark in Marks)
             {
-                if (mark < Minimum)
+                if (mark <= Minimum)
                 {
                     Minimum = mark;
                 }
-                else if (mark > Maximum)
+                else if (mark >= Maximum)
                 {
                     Maximum = mark;
                 }
             }
         }
 
+        /// <summary>
+        /// Outputs a grade profile for each grade
+        /// </summary>
         public void OutputGradeProfile()
         {
             foreach (Grades val in Enum.GetValues(typeof(Grades)))
@@ -204,6 +216,9 @@ namespace ConsoleAppProject.App03
             }
         }
 
+        /// <summary>
+        /// Calculates a grade profile for each of the grades
+        /// </summary>
         public void CalculateGradeProfile()
         {
             foreach (Grades grade in Grades)
