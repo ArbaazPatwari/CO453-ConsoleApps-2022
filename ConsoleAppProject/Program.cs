@@ -23,6 +23,8 @@ namespace ConsoleAppProject
         private static BMI calculator = new BMI();
 
         private static StudentMarks marker = new StudentMarks();
+
+        private static NetworkApp networker = new NetworkApp();
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -65,6 +67,7 @@ namespace ConsoleAppProject
             }
             else if (choice == "4")
             {
+                networker.RunNetwork();
             }
             else if (choice == "5")
             {

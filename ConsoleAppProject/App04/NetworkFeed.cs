@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 namespace ConsoleAppProject.App04
 {
     ///<summary>
@@ -18,39 +17,47 @@ namespace ConsoleAppProject.App04
     ///  By Arbaaz Patwari
     ///  Version 24/03/2022
     ///</author> 
-    public class NewsFeed
+    public class NetworkFeed
     {
-        private readonly List<MessagePost> messages;
-        private readonly List<PhotoPost> photos;
+        public const string AUTHOR = "Arbaaz";
+
+        public List<Post> posts { get; }
 
         ///<summary>
         /// Construct an empty news feed.
         ///</summary>
-        public NewsFeed()
+        public NetworkFeed()
         {
-            messages = new List<MessagePost>();
-            photos = new List<PhotoPost>();
-        }
+            posts = new List<Post>();
 
+            MessagePost post = new MessagePost(AUTHOR, "Hello World");
+            AddMessagePost(post);
+
+            PhotoPost photopost = new PhotoPost(AUTHOR, "Photo1.jpg", "Photo of planet");
+            AddPhotoPost(photopost);
+        }
 
         ///<summary>
         /// Add a text post to the news feed.
-        /// 
-        /// @param text  The text post to be added.
         ///</summary>
-        public void AddMessagePost(MessagePost message)
+        public void AddPost(Post post)
         {
-            messages.Add(message);
+            posts.Add(post);
         }
 
-        ///<summary>
-        /// Add a photo post to the news feed.
-        /// 
-        /// @param photo  The photo post to be added.
-        ///</summary>
+        public void SubtractPost(Post post)
+        {
+            posts.Remove(post);
+        }
+
+        public void AddMessagePost(MessagePost message)
+        {
+            posts.Add(message);
+        }
+
         public void AddPhotoPost(PhotoPost photo)
         {
-            photos.Add(photo);
+            posts.Add(photo);
         }
 
         ///<summary>
@@ -60,16 +67,9 @@ namespace ConsoleAppProject.App04
         public void Display()
         {
             // display all text posts
-            foreach (MessagePost message in messages)
+            foreach (Post post in posts)
             {
-                message.Display();
-                Console.WriteLine();   // empty line between posts
-            }
-
-            // display all photos
-            foreach (PhotoPost photo in photos)
-            {
-                photo.Display();
+                post.Display();
                 Console.WriteLine();   // empty line between posts
             }
         }
