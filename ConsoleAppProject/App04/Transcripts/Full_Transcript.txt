@@ -1,0 +1,164 @@
+
+===============================================
+    BNU CO453 Applications Programming 2022
+        by Arbaaz Patwari
+===============================================
+
+App Library - Arbaaz Patwari
+-------------------------------------
+1) App 1 - Distance Converter
+2) App 2 - Body Mass Index Calculator
+3) App 3 - Student Marker
+4) App 4 - Social Network
+5) App 5 - RPG Game
+6) Quit
+
+Please enter your choice of app >
+4
+
+---------------------------------------------
+    App 4 - Social Network
+       by Arbaaz Patwari
+---------------------------------------------
+
+
+1. Post Message
+2. Post Photo
+3. Remove Post
+4. Display All Posts
+5. Display By Author
+6. Display By Date
+7. Add Comment
+8. Like Post
+9. Quit
+Please select an option >
+1
+
+ Posting a Message
+ ------------------
+
+Please enter your name > Arbaaz
+Please enter your message > Hello everyone
+
+ You have just posted this message:
+ -----------------------------------
+
+Displaying Message Information:
+    Message: Hello everyone
+
+    Author: Arbaaz
+    Time Elpased: 0 seconds ago
+
+
+    No comments.
+
+---------------------------------------------
+    App 4 - Social Network
+       by Arbaaz Patwari
+---------------------------------------------
+
+
+1. Post Message
+2. Post Photo
+3. Remove Post
+4. Display All Posts
+5. Display By Author
+6. Display By Date
+7. Add Comment
+8. Like Post
+9. Quit
+Please select an option >
+2
+
+ Posting and image/ photo
+ -------------------------
+
+Please enter your name > Arbaaz
+Please enter the name of the image > Fortuna
+Please enter a caption > A nice picturesque scene in Fortuna
+
+ You have just posted this image:
+ ---------------------------------
+
+Displaying Photo Information:
+    Filename: Fortuna.png
+    Caption: A nice picturesque scene in Fortuna
+
+    Author: Arbaaz
+    Time Elpased: 0 seconds ago
+
+
+    No comments.
+
+---------------------------------------------
+    App 4 - Social Network
+       by Arbaaz Patwari
+---------------------------------------------
+
+
+1. Post Message
+2. Post Photo
+3. Remove Post
+4. Display All Posts
+5. Display By Author
+6. Display By Date
+7. Add Comment
+8. Like Post
+9. Quit
+Please select an option >
+4
+Displaying Message Information:
+    Message: Hello World
+
+    Author: Arbaaz
+    Time Elpased: 4 minutes ago
+
+
+    No comments.
+
+Displaying Photo Information:
+    Filename: Photo1.jpg
+    Caption: Photo of planet
+
+    Author: Arbaaz
+    Time Elpased: 4 minutes ago
+
+
+    No comments.
+
+Displaying Message Information:
+    Message: Hello everyone
+
+    Author: Arbaaz
+    Time Elpased: 4 minutes ago
+
+
+    No comments.
+
+Displaying Photo Information:
+    Filename: Fortuna.png
+    Caption: A nice picturesque scene in Fortuna
+
+    Author: Arbaaz
+    Time Elpased: 1 minutes ago
+
+
+    No comments.
+
+
+---------------------------------------------
+    App 4 - Social Network
+       by Arbaaz Patwari
+---------------------------------------------
+
+
+1. Post Message
+2. Post Photo
+3. Remove Post
+4. Display All Posts
+5. Display By Author
+6. Display By Date
+7. Add Comment
+8. Like Post
+9. Quit
+Please select an option >
