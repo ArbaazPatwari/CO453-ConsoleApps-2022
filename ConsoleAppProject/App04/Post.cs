@@ -10,9 +10,6 @@ namespace ConsoleAppProject.App04
         // username of the post's author
         public String Username { get; }
 
-        // an arbitrarily long, multi-line message
-        public String Message { get; }
-
         public DateTime Timestamp { get; }
 
         public static int instances = 0;
@@ -31,8 +28,6 @@ namespace ConsoleAppProject.App04
 
             likes = 0;
             comments = new List<String>();
-
-            this.Message = Message;
         }
 
         /// <summary>
